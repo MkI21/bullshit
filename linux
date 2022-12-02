@@ -1,0 +1,13 @@
+man : manual instructie 
+cd: change directory
+touch : actualizeaza data modificarii la ora actuala ( timestamps) 
+mkdir: creaza partiti (make)
+rm : sterge fisiere sau partitii (remove) 
+rmdir:sterge partitiile goale 
+cp: copiaza fisiere/partitii 
+mv : muta fisiere/partitii
+rm-rf : stergere fortata 
+
+
+mysql: mysql -u root -p
+https://youtu.be/xiUTqnI6xk8
