@@ -1,0 +1,50 @@
+<html>
+<head>
+	<?php
+		$server_name = "localhost";
+		$user = "root";
+		$pass = "mkl21";
+		$db = "baza";
+
+		$conn = new mysqli($server_name, $user, $pass, $db);
+
+		if($conn->connect_error){
+			die("Connection failed: " . $conn->connect_error);
+		}
+	?>
+</head>
+<body>
+	<h1>Submit a Task!</h1>
+
+	<form action="/index.php" method="post">
+		<label for="task">Name of the task<br><input type="text" id="task" name="task"></label>
+		<input type="submit" value="Submit">
+	</form>
+
+	<?php
+		if ($_SERVER["REQUEST_METHOD"] == "POST"){
+			$name = $_POST['task'];
+
+			$sql = "INSERT INTO `tasks`(`task`) VALUES ('" . $name . "')";
+			
+			if ($name !== "")
+				$conn->query($sql);
+		}
+	?>
+
+	<h1>Those are your tasks</h1>
+	<ul>
+		<?php
+			$sql = "SELECT * FROM tasks";
+			$res = $conn->query($sql);
+
+			if ($res->num_rows > 0){
+				while($row = $res->fetch_assoc())
+					echo "<li>" . $row["task"] . "</li>";
+			}else{
+				echo "0 results";
+			}
+		?>
+	</ul>
+</body>
+</html>
