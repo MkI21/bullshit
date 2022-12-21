@@ -1,0 +1,37 @@
+intra in recovery mode 
+# mount -o rw,remount /
+# adduser username sudo (in loc de username iti scrii numele gen) 
+
+apt-get update (recherche des mises a jour)
+
+mount  apt-get upgrade (installation des mises à jour)
+
+apt-get install apache2 (installation de apache2)
+
+apt install libapache2-mod-php (installation de php)
+
+nano /var/www/html/info.php (création du fichier info.php pour tester si php est bien installé sur la machine)
+
+info.php : <?php
+phpinfo();mysql
+?>
+
+apt-get install mariadb-server (installation de mysql)
+
+sudo passwd root 
+
+apt-get install phpmyadmin (installation de phpmyadmin)
+
+Secure MariaDB with a password for the root user of the
+database (not the Linux root user) and answer YES to all
+questions / Sécurisez MariaDB avec un mot de passe pour
+l'utilisateur racine de la base de données (pas l'utilisateur
+root Linux) et répondez OUI à toutes les questions.
+
+$ sudo mysql_secure_installation
+
+sudo mysql -u root -p 
+
+
+https://youtu.be/Fzn5QbCI-Wo
+
